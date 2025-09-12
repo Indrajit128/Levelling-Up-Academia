@@ -1,0 +1,22 @@
+[
+  {
+    "id": "fb-0001",
+    "course": "CS101",
+    "instructor": "Dr. Alice Example",
+    "semester": "2023-Fall",
+    "rating": 4.5,
+    "comments": "Very engaging lectures, but would like more examples.",
+    "source": "university_survey",
+    "fetched_at": "2025-09-12T00:00:00Z"
+  },
+  {
+    "id": "fb-0002",
+    "course": "NETS201",
+    "instructor": "Dr. Carol Node",
+    "semester": "2024-Spring",
+    "rating": 3.9,
+    "comments": "Good assignments but slow feedback on grading.",
+    "source": "lms",
+    "fetched_at": "2025-09-12T00:00:00Z"
+  }
+]

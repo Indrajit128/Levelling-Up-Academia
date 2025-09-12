@@ -1,0 +1,26 @@
+[
+  {
+    "id": "pub-0001",
+    "title": "A Novel Metric for Measuring Interdisciplinary Impact",
+    "authors": ["Dr. Alice Example", "Dr. Bob Research"],
+    "year": 2023,
+    "venue": "Journal of Interdisciplinary Studies",
+    "abstract": "We propose a metric to quantify interdisciplinary work...",
+    "citation_count": 12,
+    "doi": "10.1234/example.2023.0001",
+    "source": "scopus",
+    "fetched_at": "2025-09-12T00:00:00Z"
+  },
+  {
+    "id": "pub-0002",
+    "title": "Efficient Graph Representations for Collaboration Networks",
+    "authors": ["Dr. Carol Node", "Dr. Dan Edge"],
+    "year": 2021,
+    "venue": "Conference on Network Science",
+    "abstract": "We explore graph embedding techniques...",
+    "citation_count": 45,
+    "doi": "10.1234/example.2021.0002",
+    "source": "google_scholar",
+    "fetched_at": "2025-09-12T00:00:00Z"
+  }
+]
