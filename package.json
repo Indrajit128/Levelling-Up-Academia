@@ -1,0 +1,10 @@
+ {
+   "name": "levelling-up-academia",
+   "version": "0.1.0",
+   "private": true,
+   "scripts": {
+     "start-frontend": "cd frontend && npm install && npm run dev",
+     "build-frontend": "cd frontend && npm run build",
+     "preview-frontend": "cd frontend && npm run preview"
+   }
+ }

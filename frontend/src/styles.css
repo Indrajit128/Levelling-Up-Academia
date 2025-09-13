@@ -1,4 +1,53 @@
 body { margin: 0; font-family: Inter, Arial, sans-serif; background: #f7f8fb; color: #111 }
 h1 { font-size: 20px }
-section { margin-top: 16px; background: #fff; padding: 12px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.04) }
-ul { margin: 0; padding-left: 18px }
+.center { text-align:center; padding: 12px }
+.error { color: #b00020 }
+
+/* Layout */
+.app-root { max-width: 1100px; margin: 20px auto; padding: 12px }
+.app-header { margin-bottom: 12px }
+.subtitle { color: #555; margin-top: 4px }
+.grid { display: grid; grid-template-columns: 280px 1fr; gap: 12px }
+.left-col { }
+.main-col { display: grid; grid-template-rows: auto auto; gap: 12px }
+
+.card { background: #fff; padding: 12px; border-radius: 8px; box-shadow: 0 1px 4px rgba(15,15,15,0.06) }
+
+/* Scorecard */
+.scorecard { display:flex; align-items:center; justify-content:space-between }
+.score-main { display:flex; align-items:center }
+.score-value { font-size: 40px; font-weight:700; margin-right:8px }
+.score-label { color:#666 }
+.score-breakdown { font-size:13px; color:#333 }
+
+/* Publications */
+.pub-list { display:flex; flex-direction:column; gap:10px }
+.pub-item { padding:8px; border-left:3px solid #eee }
+.pub-title { font-weight:600 }
+.pub-meta { color:#666; font-size:13px }
+
+/* Feedback */
+.fb-list { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px }
+.fb-item { padding:8px; border-left:3px solid #f0f0ff }
+.fb-meta { font-weight:600 }
+.fb-rating { color:#333 }
+.fb-comments { color:#444; font-style:italic }
+
+/* Responsive */
+@media (max-width: 800px){
+	.grid { grid-template-columns: 1fr; }
+	.left-col { order: 2 }
+	.main-col { order: 1 }
+	.score-value { font-size: 32px }
+}
+
+/* Controls */
+.searchbar { display:flex; gap:8px; margin-bottom:8px }
+.searchbar input[type="text"], .searchbar input[type="number"], .searchbar input { padding:8px; border-radius:6px; border:1px solid #ddd; flex:1 }
+.controls-row { margin-bottom:12px }
+
+.weight-controls .weights-grid { display:grid; grid-template-columns:1fr; gap:8px }
+.weight-controls label { display:flex; flex-direction:column; gap:6px }
+.weights-summary { margin-top:8px; display:flex; gap:8px; font-size:13px }
+
+.trend-chart div { width:100%; }
