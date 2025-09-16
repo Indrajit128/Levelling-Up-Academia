@@ -1,16 +1,33 @@
-body { margin: 0; font-family: Inter, Arial, sans-serif; background: #f7f8fb; color: #111 }
-h1 { font-size: 20px }
+:root {
+  --primary-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-bg: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --accent-bg: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --card-bg: rgba(255,255,255,0.95);
+  --text-primary: #333;
+  --text-secondary: #666;
+  --error: #ff6b6b;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --info: #60a5fa;
+  --shadow: rgba(0,0,0,0.1);
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--primary-bg); color: var(--text-primary); min-height: 100vh; }
+h1 { font-size: 28px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 .center { text-align:center; padding: 12px }
-.error { color: #b00020 }
+.error { color: var(--error); background: rgba(255,255,255,0.9); padding: 8px; border-radius: 6px; border-left: 4px solid var(--error); }
 
 /* Layout */
-.app-root { max-width: 1100px; margin: 20px auto; padding: 12px }
-.app-header { margin-bottom: 12px }
-.subtitle { color: #555; margin-top: 4px }
-.grid { display: grid; grid-template-columns: 280px 1fr; gap: 12px }
-.main-col { display: grid; grid-template-rows: auto auto; gap: 12px }
+.app-root { max-width: 1200px; margin: 20px auto; padding: 20px; background: var(--card-bg); border-radius: var(--border-radius); box-shadow: 0 8px 32px var(--shadow); backdrop-filter: blur(10px); }
+.app-header { margin-bottom: 20px; text-align: center; padding: 20px; background: var(--accent-bg); border-radius: var(--border-radius); color: white; }
+.subtitle { color: var(--text-secondary); margin-top: 8px; font-size: 16px; }
+.grid { display: grid; grid-template-columns: 320px 1fr; gap: 20px }
+.main-col { display: grid; grid-template-rows: auto auto; gap: 20px }
 
-.card { background: #fff; padding: 12px; border-radius: 8px; box-shadow: 0 1px 4px rgba(15,15,15,0.06) }
+.card { background: #fff; padding: 20px; border-radius: var(--border-radius); box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: var(--transition); border: 1px solid rgba(255,255,255,0.2); }
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
 
 /* Scorecard */
 .scorecard { display:flex; align-items:center; justify-content:space-between }
