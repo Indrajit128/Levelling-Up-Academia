@@ -5,8 +5,18 @@ import os
 from fastapi import Body
 from datetime import datetime
 import re
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="AII MVP Backend")
+
+# Add CORS middleware to allow frontend requests
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
@@ -46,7 +56,7 @@ async def ai_analyze(payload: dict = Body(...)):
 
     # simple normalization and keyword extraction
     s = text.lower()
-    tokens = re.findall(r"\w+", s)
+    tokens = re.findall(r"\\w+", s)
     stop = set(["the","and","is","in","of","to","a","for","on","with","that","this","as","by","an","are","we","be"]) 
     keywords = [t for t in tokens if t not in stop]
     kw_counts = {}
@@ -62,21 +72,21 @@ async def ai_analyze(payload: dict = Body(...)):
     text_len = len(tokens)
     if any(k in kw_counts for k in ("citation", "citations", "impact", "h-index", "cites")):
         suggested['research'] += 10
-        reasons.append('text mentions citations/impact → boost research')
+        reasons.append('text mentions citations/impact \u2192 boost research')
     if any(k in kw_counts for k in ("teaching", "lecture", "student", "curriculum", "course")):
         suggested['teaching'] += 12
-        reasons.append('mentions teaching or students → boost teaching')
+        reasons.append('mentions teaching or students \u2192 boost teaching')
     if any(k in kw_counts for k in ("collaborat", "team", "co-author", "coauthor", "partnership", "partner")):
         suggested['collaboration'] += 10
-        reasons.append('mentions collaboration → boost collaboration')
+        reasons.append('mentions collaboration \u2192 boost collaboration')
     if any(k in kw_counts for k in ("media", "outreach", "blog", "press", "public")):
         suggested['outreach'] += 10
-        reasons.append('mentions public outreach/media → boost outreach')
+        reasons.append('mentions public outreach/media \u2192 boost outreach')
 
     # length-based heuristic: longer prompts often ask for balanced suggestions
     if text_len > 40:
         suggested = {k: int(v*0.7) for k,v in suggested.items()}
-        reasons.append('long prompt → moderate adjustments')
+        reasons.append('long prompt \u2192 moderate adjustments')
 
     # produce a friendly reply
     reply = {
