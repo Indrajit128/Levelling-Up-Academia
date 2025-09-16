@@ -1,7 +1,8 @@
 # Core runtime dependencies (install locally)
+# Use Pydantic v2+ and a FastAPI release that supports it so the app runs on Python 3.13
 # Heavy ML / native packages moved to requirements-extras.txt
-fastapi==0.95.2
+fastapi>=0.99.0
 uvicorn[standard]==0.23.1
-pydantic==1.10.12
+pydantic>=2.0.0
 requests==2.31.0
 python-dotenv==1.0.0

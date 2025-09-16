@@ -8,7 +8,6 @@ h1 { font-size: 20px }
 .app-header { margin-bottom: 12px }
 .subtitle { color: #555; margin-top: 4px }
 .grid { display: grid; grid-template-columns: 280px 1fr; gap: 12px }
-.left-col { }
 .main-col { display: grid; grid-template-rows: auto auto; gap: 12px }
 
 .card { background: #fff; padding: 12px; border-radius: 8px; box-shadow: 0 1px 4px rgba(15,15,15,0.06) }
@@ -51,3 +50,36 @@ h1 { font-size: 20px }
 .weights-summary { margin-top:8px; display:flex; gap:8px; font-size:13px }
 
 .trend-chart div { width:100%; }
+
+.ai-suggestion { background: linear-gradient(180deg,#fcfcff,#ffffff); border: 1px solid #e6e8f0 }
+.ai-chat textarea { min-height:80px }
+
+.weight-controls input[type=range] { width:100% }
+.weights-summary span { margin-left:8px; padding:2px 6px; border-radius:6px; font-weight:600 }
+.delta-up { background: #e6ffef; color: #007a3d }
+.delta-down { background: #fff4f2; color: #b00020 }
+.weights-grid label { display:flex; flex-direction:column; gap:6px }
+.weights-grid input[type=range] { transition: box-shadow 220ms ease }
+.weights-grid input[type=range]:focus { outline: none }
+
+/* range thumb glow (modern browsers) */
+input[type=range]::-webkit-slider-thumb { transition: box-shadow 280ms ease; box-shadow: 0 0 0 rgba(0,0,0,0) }
+.range-glow { box-shadow: 0 0 8px rgba(0,122,61,0.18) }
+
+.ai-suggestion strong { display:block; margin-bottom:6px }
+.ai-suggestion button { padding:6px 10px; border-radius:6px; cursor:pointer }
+.ai-suggestion button:first-child { background:#fff; border:1px solid #ddd }
+.ai-suggestion button:last-child { background:#007a3d; color:#fff; border:none }
+
+.ai-chat button { background: #0b5cff; color:#fff; border:none; padding:8px 10px; border-radius:6px; cursor:pointer }
+.ai-chat .card { padding:10px }
+
+/* undo toast */
+.undo-toast { position: fixed; right: 18px; bottom: 18px; background: #1f2937; color:#fff; padding:12px 16px; border-radius:8px; box-shadow: 0 6px 30px rgba(0,0,0,0.2); display:flex; gap:8px; align-items:center }
+.undo-toast button { background:transparent; border:1px solid rgba(255,255,255,0.2); color:#fff; padding:6px 8px; border-radius:6px; cursor:pointer }
+
+/* Modal */
+.modal-backdrop { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(10,12,18,0.4) }
+.modal-card { background:#fff; padding:18px; border-radius:10px; width:520px; max-width:90%; box-shadow:0 10px 40px rgba(0,0,0,0.25) }
+.modal-card h3 { margin:0 0 8px 0 }
+.modal-card button { padding:8px 10px; border-radius:6px }
